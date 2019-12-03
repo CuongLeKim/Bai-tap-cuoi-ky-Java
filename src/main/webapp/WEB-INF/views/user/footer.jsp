@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 
-
+<base href="${pageContext.servletContext.contextPath}/">
 <!-- Bootstrap style -->
 <link id="callCss" rel="stylesheet"
 	href="themes/bootshop/bootstrap.min.css" media="screen" />

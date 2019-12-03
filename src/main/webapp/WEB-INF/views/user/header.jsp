@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
 
 
-
+<base href="${pageContext.servletContext.contextPath}/">
 <div id="header">
 	<div class="container">
 		<div id="welcomeLine" class="row">

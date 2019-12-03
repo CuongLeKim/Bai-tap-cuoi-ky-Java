@@ -4,7 +4,8 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="JavaCuoiKy"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources"/>
         <property name="java-output-path" value="/JavaCuoiKy/target/classes"/>
+        <property name="context-root" value="JavaCuoiKy"/>
     </wb-module>
 </project-modules>

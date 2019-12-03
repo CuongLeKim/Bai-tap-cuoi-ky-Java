@@ -14,7 +14,7 @@
 <script src="themes/js/jquery-1.7.1.min.js"></script>
 <script src="themes/js/jquery.validate.min.js"></script>
 <script type="text/javascript">
-	$(function() {
+	/* $(function() {
 		$("#register").validate({
 			rules : {
 				id : {
@@ -35,7 +35,7 @@
 				}
 			}
 		});
-	});
+	}); */
 </script>
 <style>
 label.error {
@@ -57,28 +57,26 @@ label.error {
 						<li><a href="user/home">Home</a> <span class="divider">/</span></li>
 						<li class="active">Login</li>
 					</ul>
-					<h3>Login</h3>
+					<h3>Đăng nhập</h3>
 					<div class="well">
 						<h3>Thông Tin Đăng Nhập</h3>
 
-						<form action="/user/login" method="post" "
-							class="form-horizontal" role="form" id="register">
+						<form:form action="user/login" method="post" modelAttribute="user">
 							<label class="error">${message}</label>
 							<div class="control-group">
 								<label class="control-label">Username: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-									<input type="text" id="id" placeholder="Username"
-										 />
+									<form:input path="id" id="id" placeholder="Username"
+										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Password: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-								
-									<input type="password"  id="password"
-										placeholder="Password"  />
+									<form:password path="password" id="password"
+										placeholder="Password" cssClass="form-control" />
 								</div>
 							</div>
 
@@ -96,7 +94,7 @@ label.error {
 										value="Login">
 								</div>
 							</div>
-						</form>
+						</form:form>
 					</div>
 
 				</div>

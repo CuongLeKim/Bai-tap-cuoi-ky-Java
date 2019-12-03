@@ -7,13 +7,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<base href="${pageContext.servletContext.contextPath}/">
 <meta charset="utf-8">
 <title>Shop CKC </title>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	s<jsp:include page="slideshow.jsp"></jsp:include> 
+	<jsp:include page="slideshow.jsp"></jsp:include> 
 	<div id="mainBody">
 		<div class="container">
 			<div class="row">
@@ -25,39 +25,43 @@
 						<li class="active">Sản phẩm giảm giá</li>
 					</ul>
 
-					<h3>Sản Phẩm Đang Giảm Giá</h3>
+					<%-- <h3>Sản Phẩm Đang Giảm Giá</h3>
 					<br>
-					<li class="span3">
+					//${saleOffProducts}
+					<ul class="thumbnails">
+						<c:forEach var="p" items="#">
+							<li class="span3">
 								<div class="thumbnail">
 									<!-- <i class="tag"></i> -->
-									<i class="tag"></i><a href="#"><img
-										src="images/products/DT001.jpg" width="200px" height="150px"></a>
+									<i class="tag"></i><a href="user/product/detail/${p.id }.htm"><img
+										src="images/products/${p.photo }" width="200px" height="150px"></a>
 									<div class="caption">
-										<h5>Iphone Xs Max</h5>
-										<p>Số lượng:10</p>
+										<h5>${p.nameProduct }</h5>
+										<p>Số lượng: ${p.quantity }</p>
 										<h4 style="text-align: center">
-											<a class="btn" href="#"> <i
+											<a class="btn" href="user/product/detail/${p.id }.htm"> <i
 												class="icon-zoom-in"></i>
-											</a> <a class="btn" href="shopping-cart/add/">Thêm
+											</a> <a class="btn" href="shopping-cart/add/${p.id }">Thêm
 												vào <i class="icon-shopping-cart"></i>
-											</a> 
-											
-											 <a
+											</a> <a class="btn btn-warning">-<f:formatNumber
+													value="${p.discount}" type="percent" /></a> <a
 												style="text-decoration: line-through;"
 												class="btn btn-success">Giá gốc: <f:formatNumber
-													value="5000000" pattern="###,###" /> VNĐ
+													value="${p.unitPrice}" pattern="###,###" /> VNĐ
 											</a> <br> <a class="btn btn-danger">Giá mới: <f:formatNumber
-													value="400000" pattern="###,###" />
+													value="${p.unitPrice*(1-p.discount)}" pattern="###,###" />
 												VNĐ
 											</a>
 										</h4>
 									</div>
 								</div>
 							</li>
+						</c:forEach>
+					</ul> --%>
 					
 
 				</div>
-				<!--  -->
+				
 			</div>
 		</div>
 	</div>

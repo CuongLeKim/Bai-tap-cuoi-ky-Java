@@ -9,13 +9,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<base href="${pageContext.servletContext.contextPath }/" />
 <meta charset="utf-8">
-<title>Shop ĐTDĐ CKC</title>
+<title>Shop CKC</title>
 </head>
 <script src="themes/js/jquery-1.7.1.min.js"></script>
 <script src="themes/js/jquery.validate.min.js"></script>
-<script type="text/javascript">
+<%-- <script type="text/javascript">
 	$(function() {
 		$("#register").validate({
 			rules : {
@@ -75,16 +75,21 @@
 				},
 				birthday : {
 					required : 'Vui lòng nhập ngày tháng năm sinh !'
-				},
-				file_image : {
-					required : 'Vui lòng chọn ảnh !'
 				}
+				
 
-			}
+			
 		});
 	});
-</script>
-
+</script> --%>
+<style>
+label.error {
+	color: red;
+	font-style: italic;
+	padding-left: 33px;
+	background: url("images/hieuboy2.gif") no-repeat left center;
+}
+</style>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="mainBody">
@@ -97,43 +102,48 @@
 						<li><a href="user/home">Home</a> <span class="divider">/</span></li>
 						<li class="active">Registration</li>
 					</ul>
-					<h3>Registration</h3>
+					<h3>Đăng ký</h3>
 					<div class="well">
 
-						
-						<form action="" method="post"
-							 class="form-horizontal" id="register">
-							<h4>Your personal information ${message}</h4>
+						<%-- <form:form action="user/register" method="POST" modelAttribute="register">
+							ten: <form:input path="fullName"/>
+							<input type="submit"> 
+						</form:form> --%>
+						 <form:form  action="user/register" method="POST"
+							modelAttribute="register" >
+							<h4>Thông tin: ${message}</h4>
 
 							<div class="control-group">
 								<label class="control-label">Full Name: <sup
 									style="color: red">*</sup>
 								</label>
 								<div class="controls">
-									<input type="text" id="fullName"
-										placeholder="Full Name"  />
+									<form:input path="fullName" id="fullName"
+										placeholder="Full Name" cssClass="form-control" />
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Username: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-									<input type="text" id="id" placeholder="Username" />
+									<form:input path="email" id="email" placeholder="Username"
+										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Password: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-									<input type="password"  id="password"
-										placeholder="Password"  />
+									<form:password path="password" id="password"
+										placeholder="Password" cssClass="form-control" />
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Email Address: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-									<input type="text" id="email" placeholder="Email Address" />
+									<form:input path="email" id="email" placeholder="Email Address"
+										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="control-group">
@@ -141,8 +151,8 @@
 									style="color: red">*</sup>
 								</label>
 								<div class="controls">
-									<input type="datetime" id="birthday"
-										placeholder="dd/MM/yyyy"  />
+									<form:input path="birthday" id="birthday"
+										placeholder="dd/MM/yyyy" cssClass="form-control" />
 								</div>
 							</div>
 							<div class="control-group">
@@ -150,8 +160,8 @@
 									style="color: red">*</sup>
 								</label>
 								<div class="controls">
-									<input type="number"  id="numberPhone"
-										placeholder="Number Phone" />
+									<form:input path="numberPhone" id="numberPhone"
+										placeholder="Number Phone" cssClass="form-control" />
 								</div>
 							</div>
 
@@ -159,11 +169,11 @@
 								<label class="control-label">Gender: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-									<select path="gender" cssClass="form-control">
+									<form:select path="gender" cssClass="form-control">
 										<option value="">-- Select --</option>
 										<option value="1">Nam</option>
 										<option value="2">Nữ</option>
-									</select>
+									</form:select>
 								</div>
 							</div>
 
@@ -172,7 +182,7 @@
 								<label class="control-label">Address: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-									<select path="address" cssClass="form-control">
+									<form:select path="address" cssClass="form-control">
 										<option value="">-- Select --</option>
 										<option value="TP Can Tho">TP. Cần Thơ</option>
 										<option value="TP Da Nang">TP. Đà Nẵng</option>
@@ -238,20 +248,10 @@
 										<option value="Vinh Phuc">Vĩnh Phúc</option>
 										<option value="Yen Bai">Yên Bái</option>
 										<option value="Phu Yen">Phú Yên</option>
-									</select>
+									</form:select>
 								</div>
-							</div>
-
-							<div class="control-group">
-								<label class="control-label">Photo: <sup
-									style="color: red">*</sup></label>
-								<div class="controls">
-									<input id="photo" name="file_image" type="file"
-										class="form-control" />
-								</div>
-							</div>
+							</div>	
 							
-
 							<div class="control-group">
 								<div class="controls">
 									<input class="btn btn-large btn-success" type="submit"
@@ -259,7 +259,8 @@
 								</div>
 							</div>
 							<input type="hidden" name="activated" value="false">
-						</form>
+							<p style="color: red"> ${password }
+						</form:form>
 					</div>
 
 				</div>
