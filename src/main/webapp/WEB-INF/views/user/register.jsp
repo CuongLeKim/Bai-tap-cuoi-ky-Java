@@ -15,7 +15,7 @@
 </head>
 <script src="themes/js/jquery-1.7.1.min.js"></script>
 <script src="themes/js/jquery.validate.min.js"></script>
-<%-- <script type="text/javascript">
+<script type="text/javascript">
 	$(function() {
 		$("#register").validate({
 			rules : {
@@ -81,7 +81,7 @@
 			
 		});
 	});
-</script> --%>
+</script>
 <style>
 label.error {
 	color: red;
@@ -105,10 +105,6 @@ label.error {
 					<h3>Đăng ký</h3>
 					<div class="well">
 
-						<%-- <form:form action="user/register" method="POST" modelAttribute="register">
-							ten: <form:input path="fullName"/>
-							<input type="submit"> 
-						</form:form> --%>
 						 <form:form  action="user/register" method="POST"
 							modelAttribute="register" >
 							<h4>Thông tin: ${message}</h4>
@@ -126,7 +122,7 @@ label.error {
 								<label class="control-label">Username: <sup
 									style="color: red">*</sup></label>
 								<div class="controls">
-									<form:input path="email" id="email" placeholder="Username"
+									<form:input path="id" id="id" placeholder="Username"
 										cssClass="form-control" />
 								</div>
 							</div>

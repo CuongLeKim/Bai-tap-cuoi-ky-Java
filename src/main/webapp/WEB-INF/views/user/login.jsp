@@ -14,7 +14,7 @@
 <script src="themes/js/jquery-1.7.1.min.js"></script>
 <script src="themes/js/jquery.validate.min.js"></script>
 <script type="text/javascript">
-	/* $(function() {
+	$(function() {
 		$("#register").validate({
 			rules : {
 				id : {
@@ -35,7 +35,7 @@
 				}
 			}
 		});
-	}); */
+	});
 </script>
 <style>
 label.error {
@@ -57,11 +57,12 @@ label.error {
 						<li><a href="user/home">Home</a> <span class="divider">/</span></li>
 						<li class="active">Login</li>
 					</ul>
-					<h3>Đăng nhập</h3>
+					<h3>Login</h3>
 					<div class="well">
 						<h3>Thông Tin Đăng Nhập</h3>
 
-						<form:form action="user/login" method="post" modelAttribute="user">
+						<form:form action="user" method="post" modelAttribute="user"
+							class="form-horizontal" role="form" id="register">
 							<label class="error">${message}</label>
 							<div class="control-group">
 								<label class="control-label">Username: <sup
@@ -78,15 +79,7 @@ label.error {
 									<form:password path="password" id="password"
 										placeholder="Password" cssClass="form-control" />
 								</div>
-							</div>
-
-							<div class="control-group">
-								<label class="control-label"> </label>
-								<div class="controls">
-									<input type="checkbox" name="remember" value="true">
-									Ghi nhớ ?
-								</div>
-							</div>
+							</div>			
 
 							<div class="control-group">
 								<div class="controls">

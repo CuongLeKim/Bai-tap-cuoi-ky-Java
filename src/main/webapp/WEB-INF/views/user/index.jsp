@@ -7,13 +7,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="${pageContext.servletContext.contextPath}/">
+<base href="${pageContext.servletContext.contextPath }/" />
 <meta charset="utf-8">
-<title>Shop CKC </title>
+<title>Shop CKC</title>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<jsp:include page="slideshow.jsp"></jsp:include> 
+	<jsp:include page="slideshow.jsp"></jsp:include>
 	<div id="mainBody">
 		<div class="container">
 			<div class="row">
@@ -25,11 +25,10 @@
 						<li class="active">Sản phẩm giảm giá</li>
 					</ul>
 
-					<%-- <h3>Sản Phẩm Đang Giảm Giá</h3>
+					<h3>Sản Phẩm Đang Giảm Giá</h3>
 					<br>
-					//${saleOffProducts}
 					<ul class="thumbnails">
-						<c:forEach var="p" items="#">
+						<c:forEach var="p" items="${saleOffProducts}">
 							<li class="span3">
 								<div class="thumbnail">
 									<!-- <i class="tag"></i> -->
@@ -57,11 +56,10 @@
 								</div>
 							</li>
 						</c:forEach>
-					</ul> --%>
-					
+					</ul>
 
 				</div>
-				
+				<!--  -->
 			</div>
 		</div>
 	</div>

@@ -9,46 +9,7 @@
 </style>
 
 <div id="sidebar" class="span3">
-	<div class="well well-small">
-		<a id="myCart" href="shopping-cart/index"><img
-			src="themes/images/ico-cart.png" alt="cart">Xem sản phẩm giỏ
-			hàng </a><br> <br> <span id="cart-amount"
-			class="btn btn-warning pull-right"><fmt:formatNumber
-				value="${cart.amount}" pattern="###,###" /> VNĐ</span> <span
-			id="cart-count" class="btn btn-warning pull-left">${cart.count}
-			Sản phẩm</span> <br> <br>
-	</div>
-
-	<c:choose>
-		<c:when test="${sessionScope.user.fullName != null}">
-			<div class="well well-small">
-				<a id="myCart" href="order/checkout"><img
-					src="themes/images/ico-cart.png" alt="cart">Đơn đặt hàng </a><br>
-				<a id="myCart" href="order/list"><img
-					src="themes/images/ico-cart.png" alt="cart">Thông tin đơn
-					hàng </a><br> <a id="myCart" href="order/product"><img
-					src="themes/images/ico-cart.png" alt="cart">Sản phẩm đã mua </a><br>
-			</div>
-		</c:when>
-	</c:choose>
 	
-	<br>
-	<ul class="nav nav-tabs nav-stacked">
-		<li class="subMenu open"><a> CHỦNG LOẠI</a>
-			<ul>
-				<!-- Show Danh Mục -->
-				<c:forEach var="category" items="${category}">
-					<li><a href="user/product/list-by-category/${category.id}.htm">
-							<i class="icon-chevron-right"></i>${category.nameCategory } <%-- <c:choose>
-							<c:when test="${language == 'en'}">${c.name}</c:when>
-							<c:otherwise>${c.nameVN}</c:otherwise>
-						</c:choose> --%>
-					</a></li>
-				</c:forEach>
-			</ul></li>
-	</ul>
-
-	<br>
 	<ul class="nav nav-tabs nav-stacked">
 		<li class="subMenu open"><a> NHÀ CUNG CẤP </a>
 			<ul>
@@ -84,13 +45,6 @@
 	</ul>
 
 	<br>
-	<!-- <div class="thumbnail">
-		<img src="themes/images/payment_methods.png"
-			title="Bootshop Payment Methods" alt="Payments Methods">
-		<div class="caption">
-			<h5>Payment Methods</h5>
-		</div>
-	</div> -->
-
+	
 
 </div>
