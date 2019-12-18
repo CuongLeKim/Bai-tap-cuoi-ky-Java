@@ -32,7 +32,7 @@
 						</ol>
 					</div>
 					<div class="col-md-7 col-4 align-self-center">
-						<a href="http://facebook.com/HieuDTPH04388" target="blank"
+						<a href="#" target="blank"
 							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
 							<s:message code="employee.menu.contact" />
 						</a>
@@ -80,7 +80,6 @@
 												<th><s:message code="employee.customer.id" /></th>
 												<th><s:message code="employee.customer.email" /></th>
 												<th><s:message code="employee.customer.fullName" /></th>
-												<th><s:message code="employee.customer.photo" /></th>
 												<th><s:message code="employee.customer.address" /></th>
 												<th><s:message code="employee.customer.numberPhone" /></th>
 												<th><s:message code="employee.customer.birthday" /></th>
@@ -97,8 +96,6 @@
 													<td>${customer.id }</td>
 													<td width="200px">${customer.email }</td>
 													<td>${customer.fullName }</td>
-													<td><img src="images/customers/${customer.photo}"
-														height="100px" width="80px" style="border-radius: 20px"></td>
 													<td>${customer.address }</td>
 													<td>${customer.numberPhone }</td>
 													<td><f:formatDate value="${customer.birthday }"

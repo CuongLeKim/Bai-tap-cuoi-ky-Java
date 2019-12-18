@@ -31,7 +31,7 @@
 	color: red;
 	font-style: italic;
 	padding-left: 33px;
-	
+	background: url("images/hieuboy2.gif") no-repeat left center;
 }
 </style>
 <body>
@@ -135,18 +135,6 @@
 												<form:option value="0.05">5 %</form:option>
 												<form:option value="0.08">8 %</form:option>
 												<form:option value="0.10">10 %</form:option>
-											</form:select>
-										</div>
-										<br>
-										<div class="col-md-6">
-											<label>Trạng thái
-											</label>
-											<form:select path="status"
-												class="form-control form-control-line">
-												
-												<form:option value="True">Kich hoạt</form:option>
-												<form:option value="False">Chưa kích hoạt</form:option>
-												
 											</form:select>
 										</div>
 									</div>

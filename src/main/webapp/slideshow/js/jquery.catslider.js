@@ -108,7 +108,7 @@ function showCatSlider(id, delay) {
 
 					} );
 
-				}, $newcatchild.length * 90 );
+				}, $newcatchild.length * 10 );
 
 			}
 			else {

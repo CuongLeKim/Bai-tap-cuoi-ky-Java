@@ -21,7 +21,7 @@ public class EmployeeDAO {
 	 */
 	public void insertEmployee(Employee employee) {
 		Session session = sessionFactory.getCurrentSession();
-		/* employee.setId(new Date().getTime()); */
+		//employee.setId(new Date().getTime()); 
 		session.save(employee);
 
 	}

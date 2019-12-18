@@ -41,7 +41,7 @@
 						</ol>
 					</div>
 					<div class="col-md-7 col-4 align-self-center">
-						<a href="http://facebook.com/HieuDTPH04388" target="blank"
+						<a href="#" target="blank"
 							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
 							<s:message code="employee.menu.contact" />
 						</a>
@@ -125,12 +125,7 @@
 												</form:option>
 											</form:select>
 										</div>
-										<div class="col-md-4">
-											<label><s:message code="employee.customer.photo" />:
-												(<span style="color: red;">*</span>)<form:errors
-													path="photo" /></label> <input id="photo" type="file"
-												name="file_image" class="form-control form-control-line" />
-										</div>
+										
 									</div>
 
 									<br>

@@ -70,39 +70,34 @@ public class ProductController extends ShopCKCController {
 		return "employee/product-edit";
 	}
 
-	// Thêm sản phẩm
-	@RequestMapping(value = "save-product.htm", method = RequestMethod.POST)
-	public String saveProduct(ModelMap model, @ModelAttribute(value = "product") Product product,
-			@RequestParam("file_image") MultipartFile photo, BindingResult result) {
-		try {
-			ProductValidator productVali = new ProductValidator();
-			productVali.validate(product, result);
-			
-			
-			if (photo.isEmpty()) {
-				result.rejectValue("photo", "message.photo");
-			} else if (!photo.getOriginalFilename().endsWith(".jpg") && !photo.getOriginalFilename().endsWith(".png")
-					&& !photo.getOriginalFilename().endsWith(".jpeg") && !photo.getOriginalFilename().endsWith(".JPG")
-					&& !photo.getOriginalFilename().endsWith(".PNG")
-					&& !photo.getOriginalFilename().endsWith(".JPEG")) {
-				result.rejectValue("photo", "message.photo.format");
-			}
-			if (result.hasErrors()) {
-				return "employee/product-add";
-			} else {
-				if (!photo.isEmpty()) {
-					String filePhoto = photo.getOriginalFilename();
-					String photoPath = application.getRealPath("/images/products/" + filePhoto);
-					photo.transferTo(new File(photoPath));
-					product.setPhoto(filePhoto);
-				}
-				productService.insertProduct(product);
-				
-			}
-		} catch (Exception e) {
-		}
-		return "redirect:/employee/product";
-	}
+	
+	  // Thêm sản phẩm
+	  
+	  @RequestMapping(value = "save-product.htm", method = RequestMethod.POST)
+	  public String saveProduct(ModelMap model, @ModelAttribute(value = "product")
+	  Product product,
+	  
+	  @RequestParam("file_image") MultipartFile photo, BindingResult result) { try
+	  { ProductValidator productVali = new ProductValidator();
+	  productVali.validate(product, result);
+	  
+	  
+	  if (photo.isEmpty()) { result.rejectValue("photo", "message.photo"); } else
+	  if (!photo.getOriginalFilename().endsWith(".jpg") &&
+	  !photo.getOriginalFilename().endsWith(".png") &&
+	  !photo.getOriginalFilename().endsWith(".jpeg") &&
+	  !photo.getOriginalFilename().endsWith(".JPG") &&
+	  !photo.getOriginalFilename().endsWith(".PNG") &&
+	  !photo.getOriginalFilename().endsWith(".JPEG")) { result.rejectValue("photo",
+	  "message.photo.format"); } if (result.hasErrors()) { return
+	  "employee/product-add"; } else { if (!photo.isEmpty()) { String filePhoto =
+	  photo.getOriginalFilename(); String photoPath =
+	  application.getRealPath("/images/products/" + filePhoto);
+	  photo.transferTo(new File(photoPath)); product.setPhoto(filePhoto); }
+	  productService.insertProduct(product);
+	  
+	  } } catch (Exception e) { } return "redirect:/employee/product"; }
+	 
 
 	// Sửa sản phẩm
 	@RequestMapping(value = "edit-product/{id}.htm", method = RequestMethod.POST)

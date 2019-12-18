@@ -65,47 +65,41 @@ public class CustomerController {
 		return "employee/customer-edit";
 	}
 
-	// Thêm khách hàng
-	@RequestMapping(value = "save-customer.htm", method = RequestMethod.POST)
-	public String addCustomer(ModelMap model, @ModelAttribute("customer") @Validated Customer customer,
-			@RequestParam("file_image") MultipartFile photo, BindingResult result) {
-		try {
-			CustomerValidator customerVali = new CustomerValidator();
-			customerVali.validate(customer, result);
-			if (customer.getEmail() == null) {
-				result.reject("email");
-			} else if (customerService.checkEmail(customer.getEmail()) > 0) {
-				result.rejectValue("email", "error.customer.email.exit");
-			}
-			if (photo.isEmpty()) {
-				result.rejectValue("photo", "message.photo");
-			} else if (!photo.getOriginalFilename().endsWith(".jpg") && !photo.getOriginalFilename().endsWith(".png")
-					&& !photo.getOriginalFilename().endsWith(".jpeg") && !photo.getOriginalFilename().endsWith(".JPG")
-					&& !photo.getOriginalFilename().endsWith(".PNG")
-					&& !photo.getOriginalFilename().endsWith(".JPEG")) {
-				result.rejectValue("photo", "message.photo.format");
-			}
-			if (result.hasErrors()) {
-				return "employee/customer-add";
-			} else {
-				if (!photo.isEmpty()) {
-					String filePhoto = photo.getOriginalFilename();
-					String photoPath = application.getRealPath("/images/customers/" + filePhoto);
-					photo.transferTo(new File(photoPath));
-					//customer.setPhoto(filePhoto);
-				}
-				customerService.insertCustomer(customer);
-				SendMail.sendMail(customer.getEmail(), "Xin Chào, Thành Viên: " + customer.getFullName(),
-						"Bạn bây giờ đã có thể đăng nhập vào cửa hàng Hiếu Boy Shop. Hãy tha hồ mua sắm nhé :)))"
-								+ "\nTài Khoản Email: " + customer.getEmail() + "\nMật Khẩu: "
-								+ customer.getPassword());
-				model.addAttribute("listCustomer", customerService.getAllCustomer());
-			}
-		} catch (Exception e) {
-		}
-
-		return "redirect:/employee/customer";
-	}
+	/*
+	 * // Thêm khách hàng
+	 * 
+	 * @RequestMapping(value = "save-customer.htm", method = RequestMethod.POST)
+	 * public String addCustomer(ModelMap
+	 * model, @ModelAttribute("customer") @Validated Customer customer,
+	 * 
+	 * @RequestParam("file_image") MultipartFile photo, BindingResult result) { try
+	 * { CustomerValidator customerVali = new CustomerValidator();
+	 * customerVali.validate(customer, result); if (customer.getEmail() == null) {
+	 * result.reject("email"); } else if
+	 * (customerService.checkEmail(customer.getEmail()) > 0) {
+	 * result.rejectValue("email", "error.customer.email.exit"); } if
+	 * (photo.isEmpty()) { result.rejectValue("photo", "message.photo"); } else if
+	 * (!photo.getOriginalFilename().endsWith(".jpg") &&
+	 * !photo.getOriginalFilename().endsWith(".png") &&
+	 * !photo.getOriginalFilename().endsWith(".jpeg") &&
+	 * !photo.getOriginalFilename().endsWith(".JPG") &&
+	 * !photo.getOriginalFilename().endsWith(".PNG") &&
+	 * !photo.getOriginalFilename().endsWith(".JPEG")) { result.rejectValue("photo",
+	 * "message.photo.format"); } if (result.hasErrors()) { return
+	 * "employee/customer-add"; } else { if (!photo.isEmpty()) { String filePhoto =
+	 * photo.getOriginalFilename(); String photoPath =
+	 * application.getRealPath("/images/customers/" + filePhoto);
+	 * photo.transferTo(new File(photoPath)); //customer.setPhoto(filePhoto); }
+	 * customerService.insertCustomer(customer);
+	 * SendMail.sendMail(customer.getEmail(), "Xin Chào, Thành Viên: " +
+	 * customer.getFullName(),
+	 * "Bạn bây giờ đã có thể đăng nhập vào cửa hàng Hiếu Boy Shop. Hãy tha hồ mua sắm nhé :)))"
+	 * + "\nTài Khoản Email: " + customer.getEmail() + "\nMật Khẩu: " +
+	 * customer.getPassword()); model.addAttribute("listCustomer",
+	 * customerService.getAllCustomer()); } } catch (Exception e) { }
+	 * 
+	 * return "redirect:/employee/customer"; }
+	 */
 
 	// Sửa khách hàng
 	@RequestMapping(value = "edit-customer/{id}.htm", method = RequestMethod.POST)

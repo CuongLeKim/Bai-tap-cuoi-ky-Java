@@ -16,7 +16,7 @@
 	color: red;
 	font-style: italic;
 	padding-left: 33px;
-	background: url("images/hieuboy2.gif") no-repeat left center;
+	
 }
 </style>
 <body>
@@ -40,12 +40,7 @@
 									code="employee.customer.add" /></li>
 						</ol>
 					</div>
-					<div class="col-md-7 col-4 align-self-center">
-						<a href="http://facebook.com/HieuDTPH04388" target="blank"
-							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
-							<s:message code="employee.menu.contact" />
-						</a>
-					</div>
+					
 				</div>
 				<!-- End Bread crumb and right sidebar toggle -->
 				<!-- Start Page Content -->
@@ -67,6 +62,14 @@
 													path="email" /></label>
 											<form:input path="email" type="email"
 												placeholder="Nhập tài khoản email" size="30" maxlength="30"
+												class="form-control form-control-line" />
+										</div>
+										div class="col-md-6">
+											<label> <s:message code="employee.customer.email" />:
+												(<span style="color: red;">*</span>)<form:errors
+													path="id" /></label>
+											<form:input path="id" type="id"
+												placeholder="Nhập tên tài khoản " size="30" maxlength="30"
 												class="form-control form-control-line" />
 										</div>
 										<div class="col-md-6">
@@ -135,12 +138,6 @@
 													<s:message code="employee.gender.female" />
 												</form:option>
 											</form:select>
-										</div>
-										<div class="col-md-6">
-											<label><s:message code="employee.customer.photo" />:
-												(<span style="color: red;">*</span>)<form:errors
-													path="photo" /></label> <input id="photo" type="file"
-												name="file_image" class="form-control form-control-line" />
 										</div>
 									</div>
 									<br>
