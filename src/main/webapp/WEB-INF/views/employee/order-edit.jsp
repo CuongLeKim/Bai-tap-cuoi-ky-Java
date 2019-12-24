@@ -54,7 +54,7 @@ label.error {
 	color: red;
 	font-style: italic;
 	padding-left: 33px;
-	background: url("images/hieuboy2.gif") no-repeat left center;
+	
 }
 </style>
 <style type="text/css">
@@ -62,7 +62,7 @@ label.error {
 	color: red;
 	font-style: italic;
 	padding-left: 33px;
-	background: url("images/hieuboy2.gif") no-repeat left center;
+	
 }
 </style>
 <body>
@@ -86,12 +86,7 @@ label.error {
 									code="employee.order.edit" /></li>
 						</ol>
 					</div>
-					<div class="col-md-7 col-4 align-self-center">
-						<a href="http://facebook.com/HieuDTPH04388" target="blank"
-							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
-							<s:message code="employee.menu.contact" />
-						</a>
-					</div>
+					
 				</div>
 				<!-- End Bread crumb and right sidebar toggle -->
 				<!-- Start Page Content -->

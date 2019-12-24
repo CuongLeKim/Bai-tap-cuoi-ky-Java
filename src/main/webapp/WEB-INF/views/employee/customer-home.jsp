@@ -31,12 +31,7 @@
 									code="employee.customer.list" /></li>
 						</ol>
 					</div>
-					<div class="col-md-7 col-4 align-self-center">
-						<a href="#" target="blank"
-							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
-							<s:message code="employee.menu.contact" />
-						</a>
-					</div>
+
 				</div>
 				<!-- End Bread crumb and right sidebar toggle -->
 				<!-- Start Page Content -->
@@ -63,11 +58,7 @@
 												<s:message code="employee.search" />
 											</button>
 										</div>
-										<div>
-											<a type="submit" href="employee/customer/add-customer.htm"
-												class="btn waves-effect waves-light btn-primary pull-right hidden-sm-down"><s:message
-													code="employee.customer.add" /></a>
-										</div>
+
 									</div>
 								</form:form>
 								<br>
@@ -104,21 +95,13 @@
 															<c:when test="${customer.gender < 2 }"> Nam </c:when>
 															<c:when test="${customer.gender >= 2}"> Nữ </c:when>
 														</c:choose></td>
-													<td><a
-														href="employee/customer/edit-customer/${customer.id }.htm"
-														class="btn btn-info btn-simple btn-sm"> <i
-															class="fa fa-edit"></i> <s:message code="employee.edit" /></a>
-														<br> <a
-														href="employee/customer/delete-customer/${customer.id }.htm"
+													<td>
+														<br>
+														 <a	href="employee/customer/delete-customer/${customer.id }.htm"
 														onclick="return confirm('Bạn chắc chắn xóa chứ ?')"
 														class="btn btn-warning btn-simple btn-sm"> <i
 															class="fa fa-times"></i> <s:message
 																code="employee.delete" />
-													</a> <br> <a
-														href="employee/product/detail/${product.id }.htm"
-														class="btn btn-success btn-simple btn-sm"> <i
-															class="fa fa-video-camera"></i> <s:message
-																code="employee.detail" />
 													</a></td>
 												</tr>
 											</c:forEach>

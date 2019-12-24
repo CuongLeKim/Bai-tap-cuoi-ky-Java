@@ -28,9 +28,9 @@ public class UserAuthorizeInterceptor extends HandlerInterceptorAdapter {
 		System.out.println("UserAuthorizeInterceptor.postHandler()");
 	}
 
-	@Override
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
-			Exception ex) {
-		System.out.println("UserAuthorizeInterceptor.afterCompletion()");
-	}
+	
+	  @Override public void afterCompletion(HttpServletRequest request,
+	  HttpServletResponse response, Object handler, Exception ex) {
+	  System.out.println("UserAuthorizeInterceptor.afterCompletion()"); }
+	 
 }

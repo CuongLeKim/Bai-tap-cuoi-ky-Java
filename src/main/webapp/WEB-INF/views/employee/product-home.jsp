@@ -31,12 +31,7 @@
 									code="employee.product.list" /></li>
 						</ol>
 					</div>
-					<div class="col-md-7 col-4 align-self-center">
-						<a href="#" target="blank"
-							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
-							<s:message code="employee.menu.contact" />
-						</a>
-					</div>
+				
 				</div>
 				<!-- End Bread crumb and right sidebar toggle -->
 				<!-- Start Page Content -->

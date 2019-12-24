@@ -99,6 +99,7 @@ public class UserOrderController extends ShopCKCController {
 	}
 
 	// Đặt hàng
+	@SuppressWarnings("unchecked")
 	@RequestMapping("purchase")
 	public String purchase(ModelMap model, @ModelAttribute Order order) {
 
@@ -113,7 +114,10 @@ public class UserOrderController extends ShopCKCController {
 				detail.setAmount(p.getUnitPrice());
 				detail.setQuantity(p.getQuantity());
 				detail.setDiscount(p.getDiscount());
+				
 				session.save(detail);
+				
+				
 			}
 			cart.clear();
 			return "redirect:/order/detail/" + order.getId();
@@ -129,9 +133,11 @@ public class UserOrderController extends ShopCKCController {
 		Order order = (Order) session.get(Order.class, id);
 		order.setId(id);
 		order.setStatus(2);
+		order.setAmount(cart.getAmount());
 		session.update(order);
 		model.addAttribute("order", order);
 		return "redirect:/order/list";
 
 	}
+
 }

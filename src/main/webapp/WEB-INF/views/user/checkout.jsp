@@ -118,6 +118,8 @@ label.error {
 										class="form-control error" placeholder="Nhập số điện thoại" />
 								</div>
 							</div>
+							
+								
 							<div class="control-group">
 								<label class="control-label">Địa chỉ: <sup
 									style="color: red">*</sup></label>

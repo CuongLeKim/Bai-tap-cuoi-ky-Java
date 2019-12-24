@@ -6,14 +6,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-<script src="/HieuBoyShop/nicEditor/nicEdit.js" type="text/javascript"></script>
+<script src="/JavaOKOK/nicEditor/nicEdit.js" type="text/javascript"></script>
 <script type="text/javascript">
 	bkLib.onDomLoaded(function() {
 		//new nicEditor().panelInstance('description');
 		new nicEditor({
 			fullPanel : true,
-			iconsPath : '/HieuBoyShop/nicEditor/nicEditorIcons.gif',
-			uploadURI : '/HieuBoyShop/nicEditor/upload',
+			iconsPath : '/JavaOKOK/nicEditor/nicEditorIcons.gif',
+			uploadURI : '/JavaOKOK/nicEditor/upload',
 			buttonList : [ 'fontSize', 'bold', 'italic', 'underline',
 					'strikeThrough', 'subscript', 'superscript', 'html',
 					'image' ],
@@ -32,7 +32,7 @@
 	color: red;
 	font-style: italic;
 	padding-left: 33px;
-	background: url("images/hieuboy2.gif") no-repeat left center;
+	
 }
 </style>
 <body>
@@ -56,12 +56,7 @@
 									code="employee.product.edit" /></li>
 						</ol>
 					</div>
-					<div class="col-md-7 col-4 align-self-center">
-						<a href="http://facebook.com/HieuDTPH04388" target="blank"
-							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
-							<s:message code="employee.menu.contact" />
-						</a>
-					</div>
+					
 				</div>
 				<!-- End Bread crumb and right sidebar toggle -->
 				<!-- Start Page Content -->

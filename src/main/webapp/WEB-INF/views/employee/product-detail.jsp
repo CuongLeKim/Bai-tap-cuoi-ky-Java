@@ -15,7 +15,7 @@
 	color: red;
 	font-style: italic;
 	padding-left: 33px;
-	background: url("images/hieuboy2.gif") no-repeat left center;
+
 }
 </style>
 </head>
@@ -39,12 +39,7 @@
 									code="employee.detail" /></li>
 						</ol>
 					</div>
-					<div class="col-md-7 col-4 align-self-center">
-						<a href="http://facebook.com/HieuDTPH04388" target="blank"
-							class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">
-							<s:message code="employee.menu.contact" />
-						</a>
-					</div>
+					
 				</div>
 				<div class="row">
 					<div class="col-lg-12 col-xlg-5 col-md-5">
