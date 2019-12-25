@@ -16,22 +16,7 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeDAO employeeDAO;
 
-	/**
-	 * Gọi insert từ lớp DAO
-	 */
-	public void insertEmployee(Employee employee) {
-		employeeDAO.insertEmployee(employee);
-
-	}
-
-	/**
-	 * Gọi edit từ lớp DAO
-	 */
-	public void editEmployee(Employee employee) {
-		employeeDAO.editEmployee(employee);
-
-	}
-
+	
 	/**
 	 * Gọi delete từ lớp DAO
 	 */

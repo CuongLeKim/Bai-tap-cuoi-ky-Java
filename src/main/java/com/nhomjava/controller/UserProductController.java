@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -147,7 +145,7 @@ public class UserProductController extends ShopCKCController {
 		product.setId(id);
 		Session session = sessionFactory.getCurrentSession();
 		session.refresh(product);
-		
+
 		// Ghi nhận mặt hàng đã xem vào cookie
 		if (!views.contains(id.toString())) {
 			views += "," + id;
@@ -300,7 +298,5 @@ public class UserProductController extends ShopCKCController {
 		model.addAttribute("list", list);
 		return "user/product-list";
 	}
-
-	
 
 }

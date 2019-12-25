@@ -28,11 +28,10 @@ public class ShoppingCart {
 	Map<Integer, Product> map = new HashMap<Integer, Product>();
 
 	/**
-	 * Bỏ mặt hàng vào giỏ. Nếu mặt hàng đã có thì tăng số lượng lên 1 và ngược
-	 * lại truy vấn mặt hàng từ CSDL và bỏ vào giỏ với số lượng là 1
+	 * Bỏ mặt hàng vào giỏ. Nếu mặt hàng đã có thì tăng số lượng lên 1 và ngược lại
+	 * truy vấn mặt hàng từ CSDL và bỏ vào giỏ với số lượng là 1
 	 * 
-	 * @param id
-	 *            là mặt hàng cần thêm vào
+	 * @param id là mặt hàng cần thêm vào
 	 * 
 	 */
 	public void add(Integer id) {
@@ -50,8 +49,7 @@ public class ShoppingCart {
 	/**
 	 * Xóa mặt hàng khỏi giỏ hàng
 	 * 
-	 * @param id
-	 *            là mặt hàng cần xóa
+	 * @param id là mặt hàng cần xóa
 	 */
 	public void remove(Integer id) {
 		map.remove(id);
@@ -60,8 +58,7 @@ public class ShoppingCart {
 	/**
 	 * Cập nhật số lượng của một mặt hàng trong giỏ
 	 * 
-	 * @param id
-	 *            là mã mặt hàng cần cập nhật số lượng
+	 * @param id          là mã mặt hàng cần cập nhật số lượng
 	 * @param newQuantity
 	 */
 	public void update(Integer id, int newQuantity) {
@@ -116,8 +113,7 @@ public class ShoppingCart {
 	/**
 	 * Đặt hàng với các mặt hàng đã chọn trong giỏ hàng
 	 * 
-	 * @param order
-	 *            là đơn hàng chứ các mặt hàng trong giỏ
+	 * @param order là đơn hàng chứ các mặt hàng trong giỏ
 	 */
 	public void purchase(Order order) {
 		Session session = sessionFactory.getCurrentSession();
@@ -130,7 +126,7 @@ public class ShoppingCart {
 			detail.setAmount(item.getUnitPrice());
 			detail.setQuantity(item.getQuantity());
 			detail.setDiscount(item.getDiscount());
-			
+
 			details.add(detail);
 		}
 		order.setOrderDetail(details);

@@ -66,26 +66,7 @@ public class ShopCKCController {
 		return session.createQuery("FROM Producer").list();
 	}
 
-	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "admin/home")
-	public String adminHome(ModelMap model, HttpServletRequest request) {
-		Session session = sessionFactory.getCurrentSession();
-		String hql = "SELECT hieuboy.employee.id, hieuboy.employee.nameEmployee, hieuboy.employee.photo, "
-				+ "SUM(CASE WHEN hieuboy.type = 1 THEN 1 ELSE 0 END), SUM(CASE WHEN hieuboy.type = 0 THEN 1 ELSE 0 END),"
-				+ "SUM(CASE WHEN type = 1 THEN 1 ELSE 0 END) - SUM(CASE WHEN type = 0 THEN 1 ELSE 0 END),"
-				+ "SUM(hieuboy.amount) AS Tongket "
-				+ "FROM Bonus hieuboy GROUP BY hieuboy.employee.id, hieuboy.employee.nameEmployee, hieuboy.employee.photo "
-				+ "ORDER BY Tongket DESC";
-		List<Object[]> list = session.createQuery(hql).list();
-		model.addAttribute("topEmployee", list);
-		/*
-		 * model.addAttribute("productRevenue", getProRevenue());
-		 * model.addAttribute("categoryRevenue", getCateRevenue());
-		 * model.addAttribute("producerRevenue", getSupRevenue());
-		 * model.addAttribute("yearRevenue", getYearRevenue());
-		 */
-		return "admin/index";
-	}
+	
 
 	@SuppressWarnings("unchecked")
 	@ModelAttribute("productRevenue")
@@ -132,14 +113,15 @@ public class ShopCKCController {
 	}
 
 	@SuppressWarnings("unchecked")
+
 	@RequestMapping(value = "employee/home")
 	public String employeeHome(ModelMap model) {
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "SELECT hieuboy.employee.id, hieuboy.employee.nameEmployee, hieuboy.employee.photo, "
-				+ "SUM(CASE WHEN hieuboy.type = 1 THEN 1 ELSE 0 END), SUM(CASE WHEN hieuboy.type = 0 THEN 1 ELSE 0 END),"
+		String hql = "SELECT employee.id, employee.nameEmployee, employee.photo, "
+				+ "SUM(CASE WHEN type = 1 THEN 1 ELSE 0 END), SUM(CASE WHEN type = 0 THEN 1 ELSE 0 END),"
 				+ "SUM(CASE WHEN type = 1 THEN 1 ELSE 0 END) - SUM(CASE WHEN type = 0 THEN 1 ELSE 0 END),"
-				+ "SUM(hieuboy.amount) AS Tongket "
-				+ "FROM Bonus hieuboy GROUP BY hieuboy.employee.id, hieuboy.employee.nameEmployee, hieuboy.employee.photo "
+				+ "SUM(amount) AS Tongket "
+				+ "FROM Bonus  GROUP BY employee.id,employee.nameEmployee,employee.photo "
 				+ "ORDER BY Tongket DESC";
 		List<Object[]> list = session.createQuery(hql).list();
 		model.addAttribute("topEmployee", list);

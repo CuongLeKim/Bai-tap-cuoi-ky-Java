@@ -2,21 +2,15 @@ package com.nhomjava.controller;
 
 import java.util.List;
 
-import javax.mail.internet.MimeMessage;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nhomjava.model.Category;
 import com.nhomjava.model.Producer;
@@ -33,15 +27,10 @@ public class UserHomeContoller {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	
-
-	
 	@RequestMapping(value = "home")
 	public String userHome() {
 		return "user/index";
 	}
-
-
 
 	@Autowired
 	protected ShoppingCart cart;

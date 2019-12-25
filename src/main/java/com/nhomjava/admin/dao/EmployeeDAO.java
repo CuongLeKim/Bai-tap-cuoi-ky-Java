@@ -16,24 +16,7 @@ public class EmployeeDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	/**
-	 * Thêm nhân viên
-	 */
-	public void insertEmployee(Employee employee) {
-		Session session = sessionFactory.getCurrentSession();
-		//employee.setId(new Date().getTime()); 
-		session.save(employee);
-
-	}
-
-	/**
-	 * Sửa nhân viên
-	 */
-	public void editEmployee(Employee employee) {
-		Session session = sessionFactory.getCurrentSession();
-		session.update(employee);
-	}
-
+	
 	/**
 	 * Xóa nhân viên
 	 */
